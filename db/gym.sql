@@ -9,7 +9,7 @@ CREATE TABLE members
   contact_number VARCHAR(255),
   email VARCHAR(255),
   address VARCHAR(255),
-  premium_member BOOLEAN
+  premium_member VARCHAR(255)
 );
 
 CREATE TABLE sessions

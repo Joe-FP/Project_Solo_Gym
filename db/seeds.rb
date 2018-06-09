@@ -16,7 +16,7 @@ member1 = Member.new({
   'contact_number'=>'07468310987',
   'email'=>'abc@gmail.com',
   'address'=>'5 Moon Lane, MO1 L10',
-  'premium_member'=>true
+  'premium_member'=>'true'
   })
 
 member2 = Member.new({
@@ -24,7 +24,7 @@ member2 = Member.new({
   'contact_number'=>'07899645243',
   'email'=>'vev@gmail.com',
   'address'=>'5 Star Lane, MO1 L11',
-  'premium_member'=>false
+  'premium_member'=>'false'
   })
 
 member1.save()
