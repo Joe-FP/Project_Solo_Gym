@@ -1,12 +1,15 @@
-require_relative( "../models/booking.rb" )
+#require_relative( "../models/booking.rb" )
 require_relative( "../models/member.rb" )
 require_relative( "../models/session.rb" )
 require("pry-byebug")
 
 # Booking.delete_all()
 Member.delete_all()
-# Session.delete_all()
+Session.delete_all()
 
+# --------------------
+# Add members.
+# --------------------
 member1 = Member.new({
   'name'=>'Joe Pollock',
   'contact_number'=>'07468310987',
@@ -14,7 +17,6 @@ member1 = Member.new({
   'address'=>'5 Moon Lane, MO1 L10',
   'premium_member'=>true
   })
-member1.save()
 
 member2 = Member.new({
   'name'=>'John Smith',
@@ -23,8 +25,38 @@ member2 = Member.new({
   'address'=>'5 Star Lane, MO1 L11',
   'premium_member'=>false
   })
+
+member1.save()
 member2.save()
 
+# --------------------
+# Add sessions.
+# --------------------
+
+session1 = Session.new({
+  'title'=>'Wake up!',
+  'session_date'=>'2018/06/19',
+  'session_time'=>'07:15',
+  'duration_mins'=>30,
+  'max_capacity'=>20,
+  'min_capacity'=>3,
+  'type'=>'HIIT',
+  'intensity_level'=>'very high'
+  })
+
+  session2 = Session.new({
+    'title'=>'Stay awake!',
+    'session_date'=>'2018/06/19',
+    'session_time'=>'12:15',
+    'duration_mins'=>30,
+    'max_capacity'=>20,
+    'min_capacity'=>3,
+    'type'=>'circuits',
+    'intensity_level'=>'moderate/high'
+    })
+
+  session1.save()
+  session2.save()
 
 binding.pry
 nil

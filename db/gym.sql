@@ -18,7 +18,7 @@ CREATE TABLE sessions
   title VARCHAR(255),
   session_date DATE,
   session_time TIME,
-  duration INT,
+  duration_mins INT,
   max_capacity INT,
   min_capacity INT,
   type VARCHAR(255),
