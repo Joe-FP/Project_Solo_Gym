@@ -1,15 +1,16 @@
-#require_relative( "../models/booking.rb" )
+require_relative( "../models/booking.rb" )
 require_relative( "../models/member.rb" )
 require_relative( "../models/session.rb" )
 require("pry-byebug")
 
-# Booking.delete_all()
+Booking.delete_all()
 Member.delete_all()
 Session.delete_all()
 
 # --------------------
 # Add members.
 # --------------------
+
 member1 = Member.new({
   'name'=>'Joe Pollock',
   'contact_number'=>'07468310987',
@@ -57,6 +58,55 @@ session1 = Session.new({
 
   session1.save()
   session2.save()
+
+  # --------------------
+  # Add bookings.
+  # --------------------
+
+  booking1 = Booking.new({
+    'member_id'=>member1.id,
+    'session_id'=>session1.id
+    })
+
+  booking2 = Booking.new({
+    'member_id'=>member2.id,
+    'session_id'=>session2.id
+    })
+
+  booking1.save()
+  booking2.save()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 binding.pry
 nil

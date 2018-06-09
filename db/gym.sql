@@ -28,6 +28,6 @@ CREATE TABLE sessions
 CREATE TABLE bookings
 (
   id SERIAL8 primary key,
-  member_id INT8 references members(id),
-  session_id INT8 references sessions(id)
+  member_id INT8 references members(id) ON DELETE CASCADE,
+  session_id INT8 references sessions(id) ON DELETE CASCADE
 );
