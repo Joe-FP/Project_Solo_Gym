@@ -42,18 +42,18 @@ session1 = Session.new({
   'max_capacity'=>20,
   'min_capacity'=>3,
   'type'=>'HIIT',
-  'intensity_level'=>'high'
+  'intensity_level'=>'High'
   })
 
   session2 = Session.new({
     'title'=>'Stay awake!',
-    'session_date'=>'2018/06/19',
+    'session_date'=>'2018/06/21',
     'session_time'=>'12:15',
     'duration_mins'=>30,
     'max_capacity'=>20,
     'min_capacity'=>3,
-    'type'=>'circuits',
-    'intensity_level'=>'moderate'
+    'type'=>'DB Circuits',
+    'intensity_level'=>'Moderate'
     })
 
   session1.save()

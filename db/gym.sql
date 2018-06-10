@@ -16,7 +16,7 @@ CREATE TABLE sessions
 (
   id SERIAL8 primary key,
   title VARCHAR(255),
-  session_date DATE,
+  session_date VARCHAR(255),
   session_time TIME,
   duration_mins INT,
   max_capacity INT,

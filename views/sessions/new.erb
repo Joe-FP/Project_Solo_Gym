@@ -20,7 +20,11 @@
 
     <div class="form-el">
       <label for="duration_mins">Duration (mins):</label>
-      <input type="text" name="duration_mins" id="duration_mins"/>
+      <select name="duration_mins" id="duration_mins">
+        <option value="30">30</option>
+        <option value="45">45</option>
+        <option value="60">60</option>
+      </select>
     </div>
 
     <div class="form-el">
@@ -36,17 +40,18 @@
     <div class="form-el">
       <label for="type">Type:</label>
       <select name="type" id="type">
-        <option value="hiit">HIIT</option>
-        <option value="circuits">Circuits</option>
+        <option value="HIIT">HIIT</option>
+        <option value="DB Circuits">DB Circuits</option>
+        <option value="Spin">Spin</option>
       </select>
     </div>
 
     <div class="form-el">
       <label for="intensity_level">Intensity level:</label>
       <select name="intensity_level" id="intensity_level">
-        <option value="low">Low</option>
-        <option value="moderate">Moderate</option>
-        <option value="high">High</option>
+        <option value="Low">Low</option>
+        <option value="Moderate">Moderate</option>
+        <option value="High">High</option>
       </select>
     </div>
 
