@@ -15,17 +15,9 @@ class Member
 
   def save()
     sql = "INSERT INTO members
-    (
-      name,
-      contact_number,
-      email,
-      address,
-      premium_member
-    )
+    (name, contact_number, email, address, premium_member)
     VALUES
-    (
-      $1, $2, $3, $4, $5
-    )
+    ($1, $2, $3, $4, $5)
     RETURNING id"
     values = [@name, @contact_number, @email, @address, @premium_member]
     results = SqlRunner.run(sql, values)
@@ -34,25 +26,16 @@ class Member
 
   def update()
     sql = "UPDATE members SET
-    (
-      name,
-      contact_number,
-      email,
-      address,
-      premium_member
-    )
+    (name, contact_number, email, address, premium_member)
     VALUES
-    (
-      $1, $2, $3, $4, $5
-    )
+    ($1, $2, $3, $4, $5)
     WHERE id = $6"
     values = [@name, @contact_number, @email, @address, @premium_member, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
-    sql = "DELETE FROM members
-    WHERE id = $1"
+    sql = "DELETE FROM members WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
@@ -64,8 +47,7 @@ class Member
   end
 
   def self.find(id)
-    sql = "SELECT * FROM members
-    WHERE id = $1"
+    sql = "SELECT * FROM members WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     return Member.new(results.first)

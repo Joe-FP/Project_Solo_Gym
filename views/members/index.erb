@@ -6,6 +6,8 @@
     <th></th>
     <th>Email Address</th>
     <th></th>
+    <th>Contact number</th>
+    <th></th>
   </tr>
   <% for member in @members %>
   <tr>
@@ -13,6 +15,7 @@
     <td>|</td>
     <td><%= member.email %></td>
     <td>|</td>
+    <td><%= member.contact_number %></td>
     <td><a href="/members/<%= member.id %>" >View</a></td>
   </tr>
   <% end %>

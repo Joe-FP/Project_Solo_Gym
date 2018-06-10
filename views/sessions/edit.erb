@@ -1,6 +1,7 @@
 <h2>Edit <%= @session.title %></h2>
 
 <form method="POST" action="/sessions/<%= @session.id %>">
+
   <div class="form-wrapper">
 
     <div class="form-el">
@@ -22,17 +23,17 @@
       <label for="duration_mins">Duration (mins):</label>
       <select name="duration_mins" id="duration_mins">
         <% if @session.duration_mins == "30" %>
-          <option value="30" selected>30</option>
-          <option value="45">45</option>
-          <option value="60">60</option>
+            <option value="30" selected>30</option>
+            <option value="45">45</option>
+            <option value="60">60</option>
         <% elsif @session.duration_mins == "45" %>
-          <option value="30">30</option>
-          <option value="45" selected>45</option>
-          <option value="60">60</option>
+            <option value="30">30</option>
+            <option value="45" selected>45</option>
+            <option value="60">60</option>
         <% else %>
-          <option value="30">30</option>
-          <option value="45">45</option>
-          <option value="60" selected>60</option>
+            <option value="30">30</option>
+            <option value="45">45</option>
+            <option value="60" selected>60</option>
         <% end %>
       </select>
     </div>
@@ -90,4 +91,5 @@
     </div>
 
   </div>
+
 </form>

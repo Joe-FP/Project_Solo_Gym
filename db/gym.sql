@@ -4,18 +4,18 @@ DROP TABLE sessions;
 
 CREATE TABLE members
 (
-  id SERIAL8 primary key,
-  name VARCHAR(255) not null,
+  id SERIAL8 PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
   contact_number VARCHAR(255),
   email VARCHAR(255),
-  address VARCHAR(255),
-  premium_member VARCHAR(255)
+  address VARCHAR(255) NOT NULL,
+  premium_member VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE sessions
 (
-  id SERIAL8 primary key,
-  title VARCHAR(255),
+  id SERIAL8 PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
   session_date VARCHAR(255),
   session_time TIME,
   duration_mins INT,
@@ -27,7 +27,14 @@ CREATE TABLE sessions
 
 CREATE TABLE bookings
 (
-  id SERIAL8 primary key,
-  member_id INT8 references members(id) ON DELETE CASCADE,
-  session_id INT8 references sessions(id) ON DELETE CASCADE
+  id SERIAL8 PRIMARY KEY,
+  member_id INT8 REFERENCES members(id) ON DELETE CASCADE,
+  session_id INT8 REFERENCES sessions(id) ON DELETE CASCADE
 );
+
+-- CREATE TABLE example (
+--     a integer,
+--     b integer,
+--     c integer,
+--     UNIQUE (a, c)
+-- );

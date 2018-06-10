@@ -1,31 +1,40 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
-require_relative( '../models/biting.rb' )
-require_relative( '../models/victim.rb' )
-require_relative( '../models/zombie.rb' )
-require_relative( '../models/action.rb' )
+require_relative( '../models/member.rb' )
+require_relative( '../models/session.rb' )
+require_relative( '../models/booking.rb' )
 also_reload( '../models/*' )
 
-get '/bitings' do
-  @bitings = Biting.all
-  @actions = Action.all
-  erb ( :"bitings/index" )
+get '/bookings' do
+  @bookings = Booking.all
+  erb (:"bookings/index")
 end
 
-get '/bitings/new' do
-  @victims = Victim.all
-  @zombies = Zombie.all
-  erb(:"bitings/new")
+get '/bookings/new' do
+  @members = Member.all
+  @sessions = Session.all
+  erb(:"bookings/new")
 end
 
-post '/bitings' do
-  biting = Biting.new(params)
-  biting.save
-  redirect to("/bitings")
+post '/bookings/:id' do
+  Booking.destroy(params['id'].to_i)
+  redirect to '/bookings'
 end
 
-post '/bitings/:id/delete' do
-  Biting.destroy(params[:id])
-  redirect to("/bitings")
+# delete '/bookings/:id' do
+#   booking = Booking.find(params['id'])
+#   booking.delete
+#   redirect to '/bookings'
+# end
+
+post '/bookings' do
+  Booking.new(params).save
+  redirect to '/bookings'
 end
+
+# post '/bookings/:id/delete' do
+#   booking = Booking.find(params['id'])
+#   booking.delete
+#   redirect to '/bookings'
+# end

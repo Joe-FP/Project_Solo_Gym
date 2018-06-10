@@ -73,8 +73,14 @@ session1 = Session.new({
     'session_id'=>session2.id
     })
 
+  booking3 = Booking.new({
+    'member_id'=>member1.id,
+    'session_id'=>session2.id
+    })
+
   booking1.save()
   booking2.save()
+  booking3.save()
 
 
 
