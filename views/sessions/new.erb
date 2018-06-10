@@ -1,0 +1,58 @@
+<h2>Session form</h2>
+
+<form method="POST" action="/sessions">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title"/>
+    </div>
+
+    <div class="form-el">
+      <label for="session_date">Session date:</label>
+      <input type="date" name="session_date" id="session_date"/>
+    </div>
+
+    <div class="form-el">
+      <label for="session_time">Session time:</label>
+      <input type="time" name="session_time" id="session_time"/>
+    </div>
+
+    <div class="form-el">
+      <label for="duration_mins">Duration (mins):</label>
+      <input type="text" name="duration_mins" id="duration_mins"/>
+    </div>
+
+    <div class="form-el">
+      <label for="max_capacity">Max capacity:</label>
+      <input type="text" name="max_capacity" id="max_capacity"/>
+    </div>
+
+    <div class="form-el">
+      <label for="min_capacity">Min capacity:</label>
+      <input type="text" name="min_capacity" id="min_capacity"/>
+    </div>
+
+    <div class="form-el">
+      <label for="type">Type:</label>
+      <select name="type" id="type">
+        <option value="hiit">HIIT</option>
+        <option value="circuits">Circuits</option>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <label for="intensity_level">Intensity level:</label>
+      <select name="intensity_level" id="intensity_level">
+        <option value="low">Low</option>
+        <option value="moderate">Moderate</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Create session"/>
+    </div>
+
+  </div>
+</form>

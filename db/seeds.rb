@@ -42,7 +42,7 @@ session1 = Session.new({
   'max_capacity'=>20,
   'min_capacity'=>3,
   'type'=>'HIIT',
-  'intensity_level'=>'very high'
+  'intensity_level'=>'high'
   })
 
   session2 = Session.new({
@@ -53,7 +53,7 @@ session1 = Session.new({
     'max_capacity'=>20,
     'min_capacity'=>3,
     'type'=>'circuits',
-    'intensity_level'=>'moderate/high'
+    'intensity_level'=>'moderate'
     })
 
   session1.save()

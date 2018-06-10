@@ -1,11 +1,48 @@
-<h1>Zombie <%= @zombie.name %></h1>
+<h1><%= @session.title %> (session)</h1>
 
-<p>Type: <%= @zombie.type %></p>
+<table>
 
-<h3>Victims:</h3>
+  <tr>
+    <td>Title:</td>
+    <td><%= @session.title %></td>
+  </tr>
 
-<ul>
-  <% @zombie.victims.each do |victim| %>
-  <li><%= victim.name %></li>
-  <% end %>
-</ul>
+  <tr>
+    <td>Date:</td>
+    <td><%= @session.session_date %></td>
+  </tr>
+
+  <tr>
+    <td>Time:</td>
+    <td><%= @session.session_time %></td>
+  </tr>
+
+  <tr>
+    <td>Duration (mins):</td>
+    <td><%= @session.duration_mins %></td>
+  </tr>
+
+  <tr>
+    <td>Max capacity:</td>
+    <td><%= @session.max_capacity %></td>
+  </tr>
+
+  <tr>
+    <td>Min capacity:</td>
+    <td><%= @session.min_capacity %></td>
+  </tr>
+
+  <tr>
+    <td>Type:</td>
+    <td><%= @session.type %></td>
+  </tr>
+
+  <tr>
+    <td>Intensity level:</td>
+    <td><%= @session.intensity_level %></td>
+  </tr>
+
+</table>
+
+<form action="/sessions/<%= @session.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+<a href="/sessions/<%= @session.id %>/edit">Edit</a>
