@@ -5,6 +5,7 @@ also_reload( '../models/*' )
 
 get '/sessions' do
   @sessions = Session.all()
+  @route = ''
   erb (:"sessions/index")
 end
 

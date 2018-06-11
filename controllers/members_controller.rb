@@ -17,6 +17,19 @@ get '/members/:id' do
   erb(:"members/show")
 end
 
+
+
+get '/members/:id/sessions' do
+ @member = Member.find(params['id'].to_i)
+ @route = 'member'
+ # doing it this way doesn't seem to work ?
+ #@sessions = member.sessions()
+ erb (:"sessions/index")
+end
+
+
+
+
 post '/members' do
   Member.new(params).save
   redirect to '/members'

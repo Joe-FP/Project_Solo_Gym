@@ -2,35 +2,27 @@
 
 <table>
   <tr>
-    <th>Member name</th>
+    <th>Name</th>
     <th>Contact number</th>
     <th>Email</th>
-    <th>Address</th>
-    <th>Premium member</th>
-    <th></th>
-    <th>Session title</th>
+    <th>Premium</th>
+    <th>Title</th>
     <th>Date</th>
     <th>Time</th>
     <th>Duration (mins)</th>
-    <th>Max capacity</th>
-    <th>Min capacity</th>
     <th>Type</th>
-    <th>Intensity level</th>
+    <th>Intensity</th>
   </tr>
   <% for booking in @bookings %>
   <tr>
     <td><%= booking.member.name %></td>
     <td><%= booking.member.contact_number %></td>
     <td><%= booking.member.email %></td>
-    <td><%= booking.member.address %></td>
     <td><%= booking.member.premium_member %></td>
-    <td>| | | | | |</td>
     <td><%= booking.session.title %></td>
     <td><%= booking.session.session_date %></td>
     <td><%= booking.session.session_time %></td>
     <td><%= booking.session.duration_mins %></td>
-    <td><%= booking.session.max_capacity %></td>
-    <td><%= booking.session.min_capacity %></td>
     <td><%= booking.session.type %></td>
     <td><%= booking.session.intensity_level %></td>
     <td>

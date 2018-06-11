@@ -6,7 +6,7 @@
     <td>Contact number:</td>
     <td><%= @member.contact_number %></td>
   </tr>
-  
+
   <tr>
     <td>Email:</td>
     <td><%= @member.email %></td>
@@ -24,5 +24,10 @@
 
 </table>
 
-<form action="/members/<%= @member.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
-<a href="/members/<%= @member.id %>/edit">Edit</a>
+<form action="/members/<%= @member.id %>/delete" method="POST"><input type="submit" value="Delete member"></form>
+
+<!-- <a href="/members/<%= @member.id %>/edit">Edit</a> -->
+<form action="/members/<%= @member.id %>/edit" method="GET"><input type="submit" value="Edit member"></form>
+
+<a href="/members/<%= @member.id %>/sessions">Sessions booked</a>
+<!-- <form action="/members/<%= @member.id %>/sessions" method="get"><input type="submit" value="Sessions booked"></form> -->

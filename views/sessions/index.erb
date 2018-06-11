@@ -1,10 +1,24 @@
 <h1>Sessions</h1>
 
-<% @sessions.each do |session| %>
-  <div class="session">
-    <p><%= session.title %></p>
-    <p><a href="/sessions/<%= session.id %>" >View</a></p>
-  </div>
-<% end %>
+<% if @route == 'member' %>
 
-<a href="/sessions/new">Create new session</a>
+  <p><%= @member.name %></p>
+
+  <% @member.sessions.each do |session| %>
+   <div class="session">
+     <p><%= session.title %></p>
+   </div>
+  <% end %>
+
+<% else %>
+
+  <% @sessions.each do |session| %>
+   <div class="session">
+     <p><%= session.title %></p>
+     <p><a href="/sessions/<%= session.id %>" >View</a></p>
+   </div>
+  <% end %>
+
+  <a id='create_session' href="/sessions/new">Create new session</a>
+
+<% end %>

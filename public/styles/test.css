@@ -1,0 +1,80 @@
+/* * {
+  border: 0.5px solid lightblue;
+} */
+
+body {
+  background: url('/images/DICKENSYARD_casestudy_02.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: blue;
+  font-family: 'Verdana', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Special Elite', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: blue;
+  margin-bottom: 20px;
+}
+
+a, a:link, a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: blue;
+}
+
+#create_session {
+
+}
+
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+}
+
+nav ul li {
+  margin-top: 100px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+main {
+  padding: 25px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+#content {
+  border-left: 1px solid darkred;
+  padding-left: 100px;
+  padding-right: 400px;
+}
+
+div.session {
+  padding: 40px;
+  margin-bottom: 10px;
+  border: 1px solid blue;
+}
