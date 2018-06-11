@@ -9,9 +9,9 @@ class Session
     @title = options['title']
     @session_date = options['session_date']
     @session_time = options['session_time']
-    @duration_mins = options['duration_mins']
-    @max_capacity = options['max_capacity']
-    @min_capacity = options['min_capacity']
+    @duration_mins = options['duration_mins'].to_i
+    @max_capacity = options['max_capacity'].to_i
+    @min_capacity = options['min_capacity'].to_i
     @type = options['type']
     @intensity_level = options['intensity_level']
   end
@@ -44,6 +44,20 @@ class Session
     SqlRunner.run(sql, values)
   end
 
+  def members()
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.session_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |member| Member.new(member) }
+  end
+
+  def bookings()
+    sql = "SELECT * FROM bookings WHERE session_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |booking| Booking.new(booking) }
+  end
+
   def self.all()
     sql = "SELECT * FROM sessions"
     results = SqlRunner.run(sql)
@@ -61,9 +75,5 @@ class Session
     sql = "DELETE FROM sessions"
     SqlRunner.run(sql)
   end
-
-  # def members
-  #
-  # end
 
 end

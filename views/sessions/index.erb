@@ -4,19 +4,40 @@
 
   <p><%= @member.name %></p>
 
-  <% @member.sessions.each do |session| %>
-   <div class="session">
-     <p><%= session.title %></p>
-   </div>
-  <% end %>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Session date</th>
+      <th>Session time</th>
+      <th>Duration (mins)</th>
+      <th>Max capacity</th>
+      <th>Min capacity</th>
+      <th>Type</th>
+      <th>Intensity level</th>
+    </tr>
+    <% for session in @sessions %>
+    <tr>
+      <td><%= session.title %></td>
+      <td><%= session.session_date %></td>
+      <td><%= session.session_time %></td>
+      <td><%= session.duration_mins %></td>
+      <td><%= session.max_capacity %></td>
+      <td><%= session.min_capacity %></td>
+      <td><%= session.type %></td>
+      <td><%= session.intensity_level %></td>
+    </tr>
+    <% end %>
+  </table>
 
 <% else %>
 
   <% @sessions.each do |session| %>
-   <div class="session">
-     <p><%= session.title %></p>
-     <p><a href="/sessions/<%= session.id %>" >View</a></p>
-   </div>
+  <div class="session">
+    <p><%= session.session_date %>:<%= session.session_time %></p>
+    <p><%= session.title %></p>
+    <p><%= session.max_capacity - session.bookings.count %> spaces left</p>
+    <p><form action="/sessions/<%= session.id %>" method="get"><input type="submit" value="View"></form></p>
+  </div>
   <% end %>
 
   <a id='create_session' href="/sessions/new">Create new session</a>

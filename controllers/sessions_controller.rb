@@ -39,3 +39,10 @@ post '/sessions/:id/delete' do
   session.delete
   redirect to '/sessions'
 end
+
+get '/sessions/:id/members' do
+  @route = 'session'
+ session = Session.find(params['id'].to_i)
+ @members = session.members
+ erb (:"members/index")
+end

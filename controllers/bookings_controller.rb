@@ -22,19 +22,13 @@ post '/bookings/:id' do
   redirect to '/bookings'
 end
 
-# delete '/bookings/:id' do
-#   booking = Booking.find(params['id'])
-#   booking.delete
-#   redirect to '/bookings'
-# end
-
 post '/bookings' do
-  Booking.new(params).save
-  redirect to '/bookings'
+  sesh_id = params['session_id']
+  session = Session.find(sesh_id)
+  if session.bookings.count < session.max_capacity
+    Booking.new(params).save
+    redirect to '/bookings'
+  else
+    erb(:"bookings/full")
+  end
 end
-
-# post '/bookings/:id/delete' do
-#   booking = Booking.find(params['id'])
-#   booking.delete
-#   redirect to '/bookings'
-# end

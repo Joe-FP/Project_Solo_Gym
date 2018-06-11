@@ -39,7 +39,7 @@ session1 = Session.new({
   'session_date'=>'2018/06/19',
   'session_time'=>'07:15',
   'duration_mins'=>30,
-  'max_capacity'=>20,
+  'max_capacity'=>2,
   'min_capacity'=>3,
   'type'=>'HIIT',
   'intensity_level'=>'High'
@@ -50,7 +50,7 @@ session1 = Session.new({
     'session_date'=>'2018/06/21',
     'session_time'=>'12:15',
     'duration_mins'=>30,
-    'max_capacity'=>20,
+    'max_capacity'=>2,
     'min_capacity'=>3,
     'type'=>'DB Circuits',
     'intensity_level'=>'Moderate'
@@ -73,16 +73,11 @@ session1 = Session.new({
     'session_id'=>session2.id
     })
 
-  booking3 = Booking.new({
-    'member_id'=>member1.id,
-    'session_id'=>session2.id
-    })
-
   booking1.save()
   booking2.save()
-  booking3.save()
 
-
+# binding.pry
+# nil
 
 
 

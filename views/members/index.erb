@@ -16,9 +16,13 @@
     <td><%= member.email %></td>
     <td>|</td>
     <td><%= member.contact_number %></td>
-    <td><a href="/members/<%= member.id %>" >View</a></td>
+    <% if @route != 'session' %>
+      <td><form action="/members/<%= member.id %>" method="get"><input type="submit" value="View"></form></td>
+    <% end %>
   </tr>
   <% end %>
 </table>
 
-<a href="/members/new">Add new member</a>
+<% if @route != 'session' %>
+  <a href="/members/new">Add new member</a>
+<% end %>
