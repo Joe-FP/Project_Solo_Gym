@@ -31,15 +31,17 @@
 
 <% else %>
 
-  <% @sessions.each do |session| %>
-  <div class="session">
-    <p><%= session.session_date %>:<%= session.session_time %></p>
-    <p><%= session.title %></p>
-    <p><%= session.max_capacity - session.bookings.count %> spaces left</p>
-    <p><form action="/sessions/<%= session.id %>" method="get"><input type="submit" value="View"></form></p>
+  <div class="all_sessions">
+    <% @sessions.each do |session| %>
+      <div class="session">
+        <p><%= session.session_date %>:<%= session.session_time %></p>
+        <p><%= session.title %></p>
+        <p><%= session.max_capacity - session.bookings.count %> spaces left</p>
+        <p><form action="/sessions/<%= session.id %>" method="get"><input type="submit" value="View"></form></p>
+      </div>
+    <% end %>
   </div>
-  <% end %>
 
-  <a id='create_session' href="/sessions/new">Create new session</a>
+  <form action="/sessions/new" method="get"><input type="submit" value="Create new session"></form>
 
 <% end %>

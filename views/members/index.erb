@@ -24,5 +24,5 @@
 </table>
 
 <% if @route != 'session' %>
-  <a href="/members/new">Add new member</a>
+  <form action="/members/new" method="get"><input type="submit" value="Add new member"></form>
 <% end %>

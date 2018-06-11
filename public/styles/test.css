@@ -12,9 +12,34 @@ body {
   margin: 0px;
 }
 
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+}
+
+nav ul li {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+main {
+  padding: 25px;
+}
+
+#content {
+  width: 800px;
+  border-left: 1px solid darkred;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 70px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Special Elite', sans-serif;
   margin: 0px;
+  margin-bottom: 60px;
   padding: 0px;
 }
 
@@ -33,27 +58,10 @@ a:hover, a:active, a:focus {
   color: blue;
 }
 
-
-nav {
-  padding: 0px;
-  margin: 0px;
-  padding-right: 25px;
-}
-
-nav ul li {
-  margin-top: 100px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
 ul {
   padding: 0px;
   margin: 0px;
   list-style-type: none;
-}
-
-main {
-  padding: 25px;
 }
 
 .flex {
@@ -64,14 +72,32 @@ main {
   flex-direction: row;
 }
 
-#content {
-  border-left: 1px solid darkred;
-  padding-left: 100px;
-  padding-right: 400px;
+.all_sessions {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  margin-right: 0px;
 }
 
 div.session {
-  padding: 40px;
-  margin-bottom: 10px;
-  border: 1px solid blue;
+  padding: 10px;
+  margin-bottom: 40px;
+  margin-right: 30px;
+  border: 1px solid grey;
+  background-color: aliceblue;
+}
+
+div.form-wrapper * {
+  width: 300px;
+}
+
+div.form-el {
+  margin-bottom: 10px
+}
+
+img {
+  width: 100px; /* you can use % */
+  height: auto;
+  position: top;
 }
