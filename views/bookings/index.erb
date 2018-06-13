@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Contact number</th>
+    <th>Number</th>
     <th>Email</th>
     <th>Premium</th>
     <th>Title</th>
@@ -11,27 +11,27 @@
     <th>Time</th>
     <th>Duration (mins)</th>
     <th>Type</th>
-    <th>Intensity</th>
   </tr>
   <% for booking in @bookings %>
   <tr>
-    <td><%= booking.member.name %></td>
-    <td><%= booking.member.contact_number %></td>
-    <td><%= booking.member.email %></td>
-    <td><%= booking.member.premium_member %></td>
-    <td><%= booking.session.title %></td>
-    <td><%= booking.session.session_date %></td>
-    <td><%= booking.session.session_time %></td>
-    <td><%= booking.session.duration_mins %></td>
-    <td><%= booking.session.type %></td>
-    <td><%= booking.session.intensity_level %></td>
+    <td class='bookings'><%= booking.member.name %></td>
+    <td class='bookings'><%= booking.member.contact_number %></td>
+    <td class='bookings'><%= booking.member.email %></td>
+    <td class='bookings'><%= booking.member.premium_member %></td>
+    <td class='bookings'><%= booking.session.title %></td>
+    <td class='bookings'><%= booking.session.session_date %></td>
+    <td class='bookings'><%= booking.session.session_time %></td>
+    <td class='bookings'><%= booking.session.duration_mins %></td>
+    <td class='bookings'><%= booking.session.type %></td>
     <td>
       <form action="/bookings/<%= booking.id %>" method="POST">
-        <input type="submit" value="Cancel booking">
+        <input type="submit" value="Cancel">
       </form>
     </td>
   </tr>
   <% end %>
 </table>
 
-<form action="/bookings/new" method="get"><input type="submit" value="Create new booking"></form>
+<form action="/bookings/new" method="get">
+  <input class='booking_btns' type="submit" value="Create new booking">
+</form>

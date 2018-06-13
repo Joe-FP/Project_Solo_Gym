@@ -29,6 +29,7 @@ get '/sessions/:id/edit' do
 end
 
 post '/sessions/:id' do
+  params.delete('captures')
   session = Session.new(params)
   session.update()
   redirect to "/sessions/#{params['id']}"
@@ -42,7 +43,7 @@ end
 
 get '/sessions/:id/members' do
   @route = 'session'
- session = Session.find(params['id'].to_i)
- @members = session.members
+  @session = Session.find(params['id'].to_i)
+  @members = @session.members
  erb (:"members/index")
 end

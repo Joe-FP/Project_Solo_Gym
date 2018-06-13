@@ -2,18 +2,18 @@
 
 <% if @route == 'member' %>
 
-  <p><%= @member.name %></p>
+  <p><%= @member.name %> is booked in for:</p>
 
   <table>
     <tr>
-      <th>Title</th>
-      <th>Session date</th>
-      <th>Session time</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Time</th>
       <th>Duration (mins)</th>
       <th>Max capacity</th>
       <th>Min capacity</th>
       <th>Type</th>
-      <th>Intensity level</th>
+      <th>Intensity</th>
     </tr>
     <% for session in @sessions %>
     <tr>
@@ -34,14 +34,19 @@
   <div class="all_sessions">
     <% @sessions.each do |session| %>
       <div class="session">
-        <p><%= session.session_date %>:<%= session.session_time %></p>
-        <p><%= session.title %></p>
-        <p><%= session.max_capacity - session.bookings.count %> spaces left</p>
-        <p><form action="/sessions/<%= session.id %>" method="get"><input type="submit" value="View"></form></p>
+        <p class='session_date'><%= session.session_date %></p>
+        <p class='session_title'><%= session.title %></p>
+        <p class='session_spaces'><%= session.max_capacity - session.bookings.count %> spaces left</p>
+        <form action="/sessions/<%= session.id %>" method="get">
+          <input class='member_btns' type="submit" value="View">
+        </form>
+        </p>
       </div>
     <% end %>
   </div>
 
-  <form action="/sessions/new" method="get"><input type="submit" value="Create new session"></form>
+  <form action="/sessions/new" method="get">
+    <input class='member_btns' type="submit" value="Create new session">
+  </form>
 
 <% end %>

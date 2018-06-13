@@ -1,5 +1,22 @@
-<h1>CodeClan GYM</h1>
+<div>
+  <h1>CodeClan GYM App</h1>
 
-<p>We’re the CodeClan Gym Group, a totally new way to exercise your mind until it disintegrates. We make absolutely everybody feel welcome.</p>
+  <p>We’re the CodeClan Gym Group, a totally new way to exercise your mind until it disintegrates. We make absolutely everybody feel welcome.</p>
 
-<p>Whatever your starting point, strengths & weaknesses, we can break you.</p>
+  <p>Whatever your starting point, strengths & weaknesses, we can break you.</p>
+</div>
+
+<div class='home_stats'>
+  <div>
+    <h3 class='home_stat_head'>Members</h3>
+    <h3 class='home_stat_num'><%= @member_count %></h3>
+  </div>
+  <div>
+    <h3 class='home_stat_head'>Sessions</h3>
+    <h3 class='home_stat_num'><%= @session_count %></h3>
+  </div>
+  <div>
+    <h3 class='home_stat_head'>Bookings</h3>
+    <h3 class='home_stat_num'><%= @booking_count %></h3>
+  </div>
+</div>

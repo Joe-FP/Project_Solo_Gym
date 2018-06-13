@@ -1,5 +1,9 @@
 <h1>Members</h1>
 
+<% if @route == 'session' %>
+ <p>The following members are booked in for: <%= @session.title %></p>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>
@@ -17,12 +21,18 @@
     <td>|</td>
     <td><%= member.contact_number %></td>
     <% if @route != 'session' %>
-      <td><form action="/members/<%= member.id %>" method="get"><input type="submit" value="View"></form></td>
+      <td>
+        <form action="/members/<%= member.id %>" method="get">
+          <input type="submit" value="View">
+        </form>
+      </td>
     <% end %>
   </tr>
   <% end %>
 </table>
 
 <% if @route != 'session' %>
-  <form action="/members/new" method="get"><input type="submit" value="Add new member"></form>
+  <form action="/members/new" method="get">
+    <input class='member_btns' type="submit" value="Add new member">
+  </form>
 <% end %>

@@ -64,6 +64,11 @@ class Session
     return results.map { |session| Session.new(session) }
   end
 
+  def self.count()
+    sql = "SELECT COUNT(*) FROM sessions"
+    results = SqlRunner.run(sql)[0]['count'].to_i
+  end
+
   def self.find(id)
     sql = "SELECT * FROM sessions WHERE id = $1"
     values = [id]

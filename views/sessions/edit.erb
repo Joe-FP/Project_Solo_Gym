@@ -53,16 +53,16 @@
       <select name="type" id="type">
         <% if @session.type == "HIIT" %>
           <option value="HIIT" selected>HIIT</option>
-          <option value="DB Circuits">DB Circuits</option>
-          <option value="Spin">Spin</option>
+          <option value="BW Circuit">BW Circuit</option>
+          <option value="Weighted Circuit">Weighted Circuit</option>
         <% elsif @session.type == "DB Circuits" %>
           <option value="HIIT">HIIT</option>
-          <option value="DB Circuits" selected>DB Circuits</option>
-          <option value="Spin">Spin</option>
+          <option value="BW Circuit" selected>BW Circuit</option>
+          <option value="Weighted Circuit">Weighted Circuit</option>
         <% else %>
           <option value="HIIT">HIIT</option>
-          <option value="DB Circuits">DB Circuits</option>
-          <option value="Spin" selected>Spin</option>
+          <option value="BW Circuit">BW Circuit</option>
+          <option value="Weighted Circuit" selected>Weighted Circuit</option>
         <% end %>
       </select>
     </div>
@@ -87,7 +87,7 @@
     </div>
 
     <div class="form-el">
-      <input type="submit" value="Update session"/>
+      <input class='member_btns' type="submit" value="Update session"/>
     </div>
 
   </div>

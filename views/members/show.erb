@@ -1,31 +1,32 @@
 <h2><%= @member.name %> (member)</h2>
 
 <table>
-
   <tr>
     <td>Contact number:</td>
     <td><%= @member.contact_number %></td>
   </tr>
-
   <tr>
     <td>Email:</td>
     <td><%= @member.email %></td>
   </tr>
-
   <tr>
     <td>Address:</td>
     <td><%= @member.address %></td>
   </tr>
-
   <tr>
     <td>Premium member:</td>
     <td><%= @member.premium_member %></td>
   </tr>
-
 </table>
 
-<form action="/members/<%= @member.id %>/delete" method="POST"><input type="submit" value="Delete member"></form>
+<form  action="/members/<%= @member.id %>/delete" method="POST">
+  <input class='member_btns' type="submit" value="Delete member">
+</form>
 
-<form action="/members/<%= @member.id %>/edit" method="GET"><input type="submit" value="Edit member"></form>
+<form  action="/members/<%= @member.id %>/edit" method="GET">
+  <input class='member_btns' type="submit" value="Edit member">
+</form>
 
-<form action="/members/<%= @member.id %>/sessions" method="get"><input type="submit" value="Sessions booked"></form>
+<form  action="/members/<%= @member.id %>/sessions" method="get">
+  <input class='member_btns' type="submit" value="Sessions booked">
+</form>

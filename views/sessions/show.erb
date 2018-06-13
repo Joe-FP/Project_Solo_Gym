@@ -35,8 +35,14 @@
   </tr>
 </table>
 
-<form action="/sessions/<%= @session.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+<form action="/sessions/<%= @session.id %>/delete" method="POST">
+  <input class='member_btns' type="submit" value="Delete">
+</form>
 
-<form action="/sessions/<%= @session.id %>/edit" method="get"><input type="submit" value="Edit"></form>
+<form action="/sessions/<%= @session.id %>/edit" method="get">
+  <input class='member_btns' type="submit" value="Edit">
+</form>
 
-<form action="/sessions/<%= @session.id %>/members" method="get"><input type="submit" value="Members"></form>
+<form action="/sessions/<%= @session.id %>/members" method="get">
+  <input class='member_btns' type="submit" value="Members">
+</form>

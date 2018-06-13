@@ -26,8 +26,7 @@ class Member
 
   def update()
     sql = "UPDATE members SET
-    (name, contact_number, email, address, premium_member)
-    VALUES
+    (name, contact_number, email, address, premium_member) =
     ($1, $2, $3, $4, $5)
     WHERE id = $6"
     values = [@name, @contact_number, @email, @address, @premium_member, @id]
@@ -51,6 +50,11 @@ class Member
     sql = "SELECT * FROM members"
     results = SqlRunner.run(sql)
     return results.map { |member| Member.new(member) }
+  end
+
+  def self.count()
+    sql = "SELECT COUNT(*) FROM members"
+    results = SqlRunner.run(sql)[0]['count'].to_i
   end
 
   def self.find(id)
