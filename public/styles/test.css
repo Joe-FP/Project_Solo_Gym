@@ -141,8 +141,13 @@ img {
 }
 
 #full {
- height: 182.67px;
- width: 300px;
+ height: 282.67px;
+ width: 400px;
+}
+
+#success {
+  height: 376px;
+  width: 400px;
 }
 
 .bookings {
@@ -154,4 +159,8 @@ td {
   padding: 10px 20px 0px 0px;
   width: 1px;
   white-space: nowrap;
+}
+
+.settings {
+  font-size: 10px;
 }

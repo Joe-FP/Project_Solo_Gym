@@ -23,12 +23,14 @@ post '/bookings/:id' do
 end
 
 post '/bookings' do
+  mem_id = params['member_id']
+  @member = Member.find(mem_id)
   sesh_id = params['session_id']
   session = Session.find(sesh_id)
   if session.bookings.count < session.max_capacity
     Booking.new(params).save
-    redirect to '/bookings'
+    erb(:"bookings/success")
   else
-    erb(:"bookings/full")
+    erb(:"bookings/fail")
   end
 end
