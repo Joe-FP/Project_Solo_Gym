@@ -36,7 +36,8 @@ get '/members/:id/edit' do
 end
 
 post '/members/:id' do
-  p params.delete('captures')
+  p params
+  params.delete('captures')
   member = Member.new(params).update
   redirect to "/members/#{params['id']}"
 end

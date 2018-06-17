@@ -75,7 +75,7 @@ session2 = Session.new({
   })
 
 session3 = Session.new({
-  'title'=>'Heart Attack',
+  'title'=>'Heart Stopper',
   'session_date'=>'2018/06/21',
   'session_time'=>'12:15',
   'duration_mins'=>30,

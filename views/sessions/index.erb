@@ -36,9 +36,9 @@
       <div class="session">
         <p class='session_date'><%= session.session_date %></p>
         <p class='session_title'><%= session.title %></p>
-        <p class='session_spaces'><%= session.max_capacity - session.bookings.count %> spaces left</p>
-        <form action="/sessions/<%= session.id %>" method="get">
-          <input class='member_btns' type="submit" value="View">
+        <h2 class='session_spaces'><%= session.max_capacity - session.bookings.count %> spaces</h2>
+        <form class='sesh_form' action="/sessions/<%= session.id %>" method="get">
+          <input class='sesh_view' type="submit" value="View">
         </form>
         </p>
       </div>

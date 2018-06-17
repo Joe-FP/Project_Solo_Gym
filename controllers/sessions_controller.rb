@@ -29,6 +29,7 @@ get '/sessions/:id/edit' do
 end
 
 post '/sessions/:id' do
+  p params
   params.delete('captures')
   session = Session.new(params)
   session.update()
