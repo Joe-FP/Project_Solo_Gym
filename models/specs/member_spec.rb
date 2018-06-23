@@ -26,10 +26,8 @@ class MemberTest < MiniTest::Test
 
   def test_save()
     @member1.save
-    id = @member1.id
-    # sql = "SELECT COUNT(*) FROM members"
-    # results = SqlRunner.run(sql)
-    assert_equal(@member1, Member.find(id))
+    @member2.save
+    assert_equal(2, Member.count)
   end
 
 end

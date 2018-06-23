@@ -29,9 +29,8 @@ class Session
 
   def update()
     sql = "UPDATE sessions SET
-    (title, session_date, session_time, duration_mins, max_capacity, min_capacity, type, intensity_level)
-    VALUES
-    ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+    (title, session_date, session_time, duration_mins, max_capacity, min_capacity, type, intensity_level) =
+    ($1, $2, $3, $4, $5, $6, $7, $8)
     WHERE id = $9"
     values = [@title, @session_date, @session_time, @duration_mins, @max_capacity, @min_capacity, @type, @intensity_level, @id]
     SqlRunner.run(sql, values)

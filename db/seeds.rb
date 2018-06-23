@@ -53,7 +53,7 @@ member4.save()
 # --------------------
 
 session1 = Session.new({
-  'title'=>'Legs, Bums & Tums',
+  'title'=>'Full Body',
   'session_date'=>'2018/06/19',
   'session_time'=>'07:15',
   'duration_mins'=>60,
@@ -75,7 +75,7 @@ session2 = Session.new({
   })
 
 session3 = Session.new({
-  'title'=>'Heart Stopper',
+  'title'=>'Cardio Blast',
   'session_date'=>'2018/06/21',
   'session_time'=>'12:15',
   'duration_mins'=>30,
