@@ -1,7 +1,7 @@
  ## Ruby Solo Project
 
-This purpose of this short project was to create an application to manage gym memberships, sessions, and bookings. 
-The application should be able to create, read, update, and delete from the database. I particularly enjoyed the backend database functionality.
+The purpose of this short project was to create an application to manage gym memberships, sessions, and bookings. 
+The application should be able to create, read, update, and delete from the database. I particularly enjoyed the backend/ database functionality.
 
 Specific code:
 
