@@ -5,8 +5,7 @@ The application should be able to create, read, update, and delete from the data
 
 Specific code:
 
- - [src/main/java/db/DBHelper.java](src/main/java/db/DBHelper.java)
- - [src/main/java/controllers/ArticleController.java](src/main/java/controllers/ArticleController.java)
+ - [Member model](models/member.rb)
  
 Given more time I would:
 
